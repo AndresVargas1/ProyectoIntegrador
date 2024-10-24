@@ -163,9 +163,8 @@ public class menuTorres extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addComponent(jLabel3)
                         .addComponent(jLabel4))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
+                .addContainerGap(421, Short.MAX_VALUE))
         );
 
         jButton6.setText("Torre 4");

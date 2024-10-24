@@ -1,0 +1,11 @@
+view.asesor.registroCliente$6
+view.asesor.registroCliente$5
+view.asesor.registroCliente$4
+view.asesor.registroCliente$3
+view.asesor.registroCliente$2
+view.asesor.registroCliente
+view.asesor.registroCliente$1
+view.asesor.registroCliente$9
+view.asesor.registroCliente$10
+view.asesor.registroCliente$8
+view.asesor.registroCliente$7

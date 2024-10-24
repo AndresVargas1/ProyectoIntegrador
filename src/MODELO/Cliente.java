@@ -6,7 +6,7 @@ package CRUD.MODELO;
 
 /**
  *
- * @author YANFER
+ * @author Nathalia y Andres
  */
 public class Cliente {
 

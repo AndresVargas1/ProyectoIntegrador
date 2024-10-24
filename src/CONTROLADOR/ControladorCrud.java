@@ -6,7 +6,7 @@ package CRUD.CONTROLADOR;
 
 /**
  *
- * @author YANFER
+ * @author Nathalia y Andres
  */
 import CRUD.MODELO.Cliente;
 import java.sql.Connection;

@@ -6,39 +6,37 @@ package CRUD.CONTROLADOR;
 
 /**
  *
- * @author YANFER
+ * @author Nathalia y Andres
  */
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class DatabaseConnection {
-    // Parámetros de conexión
-    private final String url = "jdbc:oracle:thin:@LAPTOP-T7R63ESD:1521:xe"; // Cambia los parámetros según tu BD
-    private final String user = "CRUD";
-    private final String password = "CRUD";
-    private Connection connection = null;
-
-    // Método para conectar
-    public Connection connect() {
-        try {
-            // Cargar el controlador JDBC de Oracle
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            
-            // Conectar a la base de datos
-            connection = DriverManager.getConnection(url, user, password);
-            System.out.println("Conexión exitosa a la base de datos.");
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+    public PreparedStatement sql;
+    public Connection con = null;
+    
+    public void conectar(){
+        String url = "jdbc:oracle:thin:@localhost:1521:XE";
+        String user = "EcoForge";
+        String password = "EcoForge";
+        try{
+            Class.forName("oracle.jdbc.OracleDriver");
+            con = DriverManager.getConnection(url, user,password);
+            JOptionPane.showMessageDialog(null, "Connection succesfully");
+        }catch(HeadlessException | ClassNotFoundException | SQLException e){
+            JOptionPane.showMessageDialog(null, "Connection error" +e);
         }
-        return connection;
     }
 
     // Método para cerrar la conexión
-    public void disconnect() {
+    public void desconectar() {
         try {
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
+            if (con != null && !con.isClosed()) {
+                con.close();
                 System.out.println("Conexión cerrada.");
             }
         } catch (SQLException e) {
