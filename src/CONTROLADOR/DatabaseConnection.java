@@ -19,7 +19,7 @@ public class DatabaseConnection {
     public PreparedStatement sql;
     public Connection con = null;
     
-    public void conectar(){
+    public Connection connect(){
         String url = "jdbc:oracle:thin:@localhost:1521:XE";
         String user = "EcoForge";
         String password = "EcoForge";
@@ -27,9 +27,11 @@ public class DatabaseConnection {
             Class.forName("oracle.jdbc.OracleDriver");
             con = DriverManager.getConnection(url, user,password);
             JOptionPane.showMessageDialog(null, "Connection succesfully");
+            
         }catch(HeadlessException | ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(null, "Connection error" +e);
         }
+        return con;
     }
 
     // Método para cerrar la conexión

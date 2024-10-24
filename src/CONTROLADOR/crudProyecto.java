@@ -21,12 +21,12 @@ import javax.swing.JOptionPane;
 public class crudProyecto {
     
     DatabaseConnection dbConnection = new DatabaseConnection();
-    Connection connection = dbConnection.conectar();
+    Connection connection = (Connection) dbConnection.connect();
 
     
      public boolean crearProyecto(Proyecto proyecto) {
         String sql = "INSERT INTO proyecto() VALUES (?, ?)";
-        try (Connection connection = dbConnection.connect(); PreparedStatement statement = connection.prepareStatement(sql)) {
+        try (java.sql.Connection connection = dbConnection.connect(); PreparedStatement statement = connection.prepareStatement(sql)) {
 
             statement.setInt(1, proyecto.getCodigo());
             statement.setString(2, proyecto.getNombre());
